@@ -62,3 +62,52 @@ img {
   max-width: 900px;   /* try 700–1100px and see what feels right */
 }
 
+/* ==============================
+   All groups
+   ============================== */
+.group {
+  display: flex;
+  flex-direction: column;  /* stack images vertically */
+  gap: 1rem;               /* space inside the group */
+  margin-bottom: 4rem;     /* space BETWEEN groups */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------------------------------
+   Group 1: Two vertical images
+   ------------------------------ */
+.group.two-vertical img {
+  width: 100%;
+}
+
+/* ------------------------------
+   Group 2: Single image
+   ------------------------------ */
+.group.one img {
+  width: 100%;
+}
+
+/* ------------------------------
+   Group 3: Two images, top offset right (more dramatic)
+   ------------------------------ */
+.group.two-offset-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto 4rem auto; /* top=0, bottom=4rem */
+}
+
+/* Top image: visually offset to the right */
+.group.two-offset-right img:first-child {
+  width: 100%;               /* keep full width */
+  transform: translateX(20%); /* shift 25% of its width to the right */
+}
+
+/* Bottom image: full width, base for alignment */
+.group.two-offset-right img:last-child {
+  width: 100%;
+  transform: translateX(-20%); /* shift left 25% */
+}
