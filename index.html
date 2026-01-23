@@ -2,13 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Photo</title>
+
+  <!--
+    This title appears in the browser tab.
+    You can change it later without affecting the site structure.
+  -->
+  <title>GTM — Photography</title>
+
+  <!--
+    This links a shared stylesheet.
+    Using one CSS file keeps things consistent across pages.
+  -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <h1>Test Photo</h1>
-  <img src="https://live.staticflickr.com/65535/54644973212_c027c9b133_b.jpg" alt="My Photo" style="max-width:500px;">
+
+  <!--
+    Simple site navigation.
+    This will appear on every page eventually.
+  -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects/test_album.html">Test Album</a>
+  </nav>
+
+  <!--
+    Main content area for the front-page "feed".
+    This is a vertical scroll of standalone images.
+  -->
+  <main class="feed">
+
+    <!--
+      Each image is wrapped in a <figure>.
+      This gives us semantic meaning and flexibility later.
+    -->
+    <figure>
+      <img src="https://live.staticflickr.com/65535/54172762614_db22c16843_b.jpg" alt="Test image 1">
+    </figure>
+
+    <figure>
+      <img src="https://live.staticflickr.com/65535/54644973212_c027c9b133_b.jpg" alt="Test image 2">
+    </figure>
+
+  </main>
+
 </body>
 </html>
-
-

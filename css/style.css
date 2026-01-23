@@ -1,0 +1,64 @@
+/*
+  Global reset:
+  Removes browser default spacing so we start clean.
+*/
+body {
+  margin: 0;
+  background: white;
+  color: black;
+  font-family: sans-serif;
+}
+
+/*
+  Simple navigation bar.
+  Nothing fancy yet.
+*/
+nav {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+/*
+  Front page feed:
+  Vertical stack of standalone images.
+*/
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 4rem 1rem;
+}
+
+/*
+  Album pages:
+  Similar spacing, different intent.
+*/
+.album {
+  padding: 4rem 1rem;
+}
+
+/*
+  Make images responsive by default.
+*/
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/*
+  Limit how large standalone images can appear.
+  They will scale down on small screens,
+  but never exceed this width on large screens.
+*/
+.feed img {
+  max-width: 900px;   /* try 700–1100px and see what feels right */
+}
+
