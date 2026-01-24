@@ -218,3 +218,45 @@ img {
   width: 100%;
   display: block;
 }
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 700px) {
+
+  /* Reduce horizontal offsets on mobile */
+  .group img {
+    transform: translateX(0); /* reset */
+  }
+
+  .group.two-offset-left img:first-child {
+    transform: translateX(-6%);
+  }
+
+  .group.two-offset-left img:last-child {
+    transform: translateX(6%);
+  }
+
+  .group.two-offset-right img:first-child {
+    transform: translateX(6%);
+  }
+
+  .group.two-offset-right img:last-child {
+    transform: translateX(-6%);
+  }
+
+  .group.two-offset-balanced img:first-child {
+    transform: translateX(6%);
+  }
+
+  .group.two-offset-balanced img:last-child {
+    transform: translateX(-6%);
+  }
+}
