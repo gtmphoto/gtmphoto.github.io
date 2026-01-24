@@ -62,6 +62,11 @@ img {
   max-width: 900px;   /* try 700–1100px and see what feels right */
 }
 
+:root {
+    --wide-group: 1200px;
+    --narrow-group: 850px;
+}
+
 /* ==============================
    All groups
    ============================== */
@@ -76,21 +81,29 @@ img {
 }
 
 /* ------------------------------
-   Group 1: Two vertical images
+  SINGLE IMAGE GROUP 
    ------------------------------ */
-.group.two-vertical img {
-  width: 100%;
+.group.one {
+    max-width: var(--wide-group);
 }
 
-/* ------------------------------
-   Group 2: Single image
-   ------------------------------ */
 .group.one img {
   width: 100%;
 }
 
 /* ------------------------------
-   Group 3: Two images, top offset right (more dramatic)
+   TWO IMAGE GROUP STACKED
+   ------------------------------ */
+.gropu.two-vertical {
+    max-width: var(--narrow-group);
+}
+
+.group.two-vertical img {
+  width: 100%;
+}
+
+/* ------------------------------
+  TWO IMAGE GROUP OFFSET RIGHT
    ------------------------------ */
 .group.two-offset-right {
   display: flex;
@@ -100,14 +113,108 @@ img {
   margin: 0 auto 4rem auto; /* top=0, bottom=4rem */
 }
 
-/* Top image: visually offset to the right */
+/* Top image */
 .group.two-offset-right img:first-child {
   width: 100%;               /* keep full width */
-  transform: translateX(20%); /* shift 25% of its width to the right */
+  transform: translateX(17%); /* shift 25% of its width to the right */
 }
 
-/* Bottom image: full width, base for alignment */
+/* Bottom image */
 .group.two-offset-right img:last-child {
   width: 100%;
-  transform: translateX(-20%); /* shift left 25% */
+  transform: translateX(-17%); /* shift left 25% */
+}
+
+/* ------------------------------
+  TWO IMAGE GROUP OFFSET LEFT
+   ------------------------------ */
+.group.two-offset-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto 4rem auto; /* top=0, bottom=4rem */
+}
+
+/* Top image */
+.group.two-offset-left img:first-child {
+  width: 100%;               /* keep full width */
+  transform: translateX(-17%); /* shift 25% of its width to the right */
+}
+
+/* Bottom image */
+.group.two-offset-left img:last-child {
+  width: 100%;
+  transform: translateX(17%); /* shift left 25% */
+}
+
+/* ------------------------------
+   THREE IMAGE OFFSET GROUP, STACK ON THE LEFT
+   ------------------------------ */
+.group.three-offset-left {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  align-items: center; /* vertical centering of the side image */
+}
+
+/* Left column: two stacked images */
+.group.three-offset-left .column.left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.group.three-offset-left .column.left img {
+  width: 100%;
+  display: block;
+}
+
+/* Right column: single centered image */
+.group.three-offset-left .column.right {
+  flex: 1;
+}
+
+.group.three-offset-left .column.right img {
+  width: 100%;
+  display: block;
+}
+
+/* ------------------------------
+   THREE IMAGE OFFSET GROUP, STACK ON THE RIGHT 
+   ------------------------------ */
+
+.group.three-offset-right {
+  display: flex;
+  flex-direction: row; /* flip columns */
+  gap: 1rem;
+  max-width: 1200px;        /* same wide group width */
+  margin: 0 auto 4rem auto;
+  align-items: center;      /* vertically center the stack */
+}
+
+/* Left column: single image */
+.group.three-offset-right .column.left {
+  flex: 1;
+}
+
+.group.three-offset-right .column.left img {
+  width: 100%;
+  display: block;
+}
+
+/* Right column: stacked images */
+.group.three-offset-right .column.right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.group.three-offset-right .column.right img {
+  width: 100%;
+  display: block;
 }
