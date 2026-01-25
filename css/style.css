@@ -189,7 +189,7 @@ img {
 
 .group.three-offset-right {
   display: flex;
-  flex-direction: row; /* flip columns */
+  flex-direction: row-reverse; /* flip columns */
   gap: 1rem;
   max-width: 1200px;        /* same wide group width */
   margin: 0 auto 4rem auto;
@@ -219,3 +219,29 @@ img {
   display: block;
 }
 
+/* ------------------------------
+    FOUR IMAGE GROUP
+    ------------------------------ */
+
+.group.four {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  max-width: 1200px;       /* same overall width as single / 3-group */
+  margin: 0 auto 4rem auto;
+  align-items: center;
+}
+
+/* Both columns */
+.group.four .column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+/* Images */
+.group.four img {
+  width: 100%;
+  display: block;
+}
